@@ -1,0 +1,17 @@
+name: aoc-2021
+version: 2021.1.1
+
+authors:
+  - Joakim Repomaa <mail@j.repomaa.com>
+
+targets:
+  aoc:
+    main: src/aoc.cr
+
+dependencies:
+  athena-console:
+    github: athena-framework/console
+
+crystal: 1.2.2
+
+license: MIT
