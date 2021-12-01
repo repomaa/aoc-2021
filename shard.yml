@@ -11,6 +11,8 @@ targets:
 dependencies:
   athena-console:
     github: athena-framework/console
+  dotenv:
+    github: gdotdesign/cr-dotenv
 
 crystal: 1.2.2
 

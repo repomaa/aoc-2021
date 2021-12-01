@@ -4,3 +4,7 @@ shards:
     git: https://github.com/athena-framework/console.git
     version: 0.1.0
 
+  dotenv:
+    git: https://github.com/gdotdesign/cr-dotenv.git
+    version: 1.0.0
+
