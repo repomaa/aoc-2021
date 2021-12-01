@@ -3,7 +3,7 @@ require "../cached_iterator"
 
 module AoC::Commands
   class Day01 < Base
-    private getter readings : CachedIterator(Int32) = CachedIterator.new(Array(Int32).new.each)
+    private getter! readings : CachedIterator(Int32)
     private setter readings
 
     def setup(input, output)
