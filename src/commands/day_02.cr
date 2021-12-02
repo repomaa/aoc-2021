@@ -13,31 +13,21 @@ module AoC::Commands
       end
     end
 
-    record Command, direction : Direction, delta : Int32 do
-      enum Direction
-        Forward
-        Down
-        Up
-      end
-
+    record Command, horizontal_delta : Int32, vertical_delta : Int32 do
       def self.parse(line)
         direction, delta = line.split(' ')
-        new(Direction.parse(direction), delta.to_i)
-      end
+        delta = delta.to_i
 
-      def horizontal_delta
-        case direction
-        when .forward? then delta
-        else 0
-        end
-      end
+        horizontal_delta = 0
+        vertical_delta = 0
 
-      def vertical_delta
         case direction
-        when .down? then delta
-        when .up? then -delta
-        else 0
+        when "forward" then horizontal_delta = delta
+        when "down" then vertical_delta = delta
+        when "up" then vertical_delta = -delta
         end
+
+        new(horizontal_delta, vertical_delta)
       end
     end
 
@@ -54,7 +44,7 @@ module AoC::Commands
         position + command
       end
 
-      puts final_position.horizontal * final_position.depth
+      stdout.puts final_position.horizontal * final_position.depth
     end
 
     def part_2(output, stdout)
@@ -62,7 +52,7 @@ module AoC::Commands
         position + command
       end
 
-      puts final_position.horizontal * final_position.depth
+      stdout.puts final_position.horizontal * final_position.depth
     end
   end
 end
